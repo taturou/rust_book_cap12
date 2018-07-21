@@ -1,0 +1,6 @@
+[package]
+name = "sample1"
+version = "0.1.0"
+authors = ["h-morishita"]
+
+[dependencies]
