@@ -34,8 +34,8 @@ impl Config {
 fn run(config: Config) {
     let mut f = File::open(config.filename).expect("file not found");
 
-    let mut contentes = String::new();
-    f.read_to_string(&mut contentes).expect("something went wrong reading the file");
+    let mut contents = String::new();
+    f.read_to_string(&mut contents).expect("something went wrong reading the file");
 
-    println!("With the text:\n{}", contentes);
+    println!("With the text:\n{}", contents);
 }
