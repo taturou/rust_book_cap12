@@ -12,12 +12,7 @@ fn main() {
 
     println!("Searching for \"{}\" in file \"{}\"", config.query, config.filename);
 
-    let mut f = File::open(config.filename).expect("file not found");
-
-    let mut contentes = String::new();
-    f.read_to_string(&mut contentes).expect("something went wrong reading the file");
-
-    println!("With the text:\n{}", contentes);
+    run(config);
 }
 
 struct Config {
@@ -34,4 +29,13 @@ impl Config {
         let filename = args[2].clone();
         Ok(Config {query, filename})
     }
+}
+
+fn run(config: Config) {
+    let mut f = File::open(config.filename).expect("file not found");
+
+    let mut contentes = String::new();
+    f.read_to_string(&mut contentes).expect("something went wrong reading the file");
+
+    println!("With the text:\n{}", contentes);
 }
